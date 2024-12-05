@@ -12,4 +12,8 @@ public class OnCallController {
     public void saveAssignMonthAndStartDayOfTheWeek(String inputValue) {
         onCallService.saveAssignMonthAndStartDayOfTheWeek(inputValue);
     }
+
+    public void saveWeekdaysOnCallPlace(String inputValue) {
+        onCallService.saveWeekdaysOnCallPlace(inputValue);
+    }
 }

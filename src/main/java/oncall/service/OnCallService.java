@@ -25,4 +25,9 @@ public class OnCallService {
 
         onCallRepository.saveAssignMonthAndStartDayOfTheWeek(month, dayOfWeek);
     }
+
+    public void saveWeekdaysOnCallPlace(String inputValue) {
+        onCallValidator.validateWeekdaysOnCallPlace(inputValue);
+        onCallParser.parseToWeekdaysOnCallPlace(inputValue);
+    }
 }

@@ -1,4 +1,4 @@
-package oncall.model;
+package oncall.util;
 
 import java.time.DayOfWeek;
 import java.util.Arrays;

@@ -32,7 +32,7 @@ public class OnCallSystem {
     private void saveWeekdaysOnCallPlace() {
         while(true) {
             try {
-                inputView.inputWeekdaysOnCallPlace();
+                controller.saveWeekdaysOnCallPlace(inputView.inputWeekdaysOnCallPlace());
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
