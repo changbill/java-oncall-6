@@ -2,7 +2,7 @@ package oncall.controller;
 
 import oncall.repository.OnCallRepository;
 import oncall.service.OnCallParser;
-import oncall.service.OnCallService;
+import oncall.service.OnCallSaveService;
 import oncall.service.OnCallValidator;
 
 public class OnCallControllerFactory {
@@ -11,9 +11,9 @@ public class OnCallControllerFactory {
         OnCallValidator onCallValidator = new OnCallValidator();
         OnCallParser onCallParser = new OnCallParser();
         OnCallRepository onCallRepository = new OnCallRepository();
-        OnCallService onCallService = new OnCallService(onCallValidator, onCallParser, onCallRepository);
+        OnCallSaveService onCallSaveService = new OnCallSaveService(onCallValidator, onCallParser, onCallRepository);
 
-        return new OnCallController(onCallService);
+        return new OnCallController(onCallSaveService);
     }
 
     private OnCallControllerFactory() {}

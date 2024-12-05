@@ -12,7 +12,7 @@ import oncall.exception.InputException;
 
 public class OnCallValidator {
     private static final String MONTH_AND_DAYOFTHEWEEK_REGEX = "^([1-9]|1[012])\\,(%s|%s|%s|%s|%s|%s|%s)$";
-    private static final String ON_CALL_PLACE_REGEX = "([가-힣]{1,5}\\,)+[가-힣]{1,5}$";
+    private static final String ON_CALL_PLACE_REGEX = "([가-힣]{1,5},)+[가-힣]{1,5}$";
 
     public void validateAssignMonthAndStartDayOfTheWeek(String inputValue) {
         if(!inputValue.matches(
@@ -31,7 +31,7 @@ public class OnCallValidator {
         }
     }
 
-    public void validateWeekdaysOnCallPlace(String inputValue) {
+    public void validateOnCallPlace(String inputValue) {
         if(!inputValue.matches(ON_CALL_PLACE_REGEX)) {
             throw new InputException();
         }

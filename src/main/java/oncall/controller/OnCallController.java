@@ -1,19 +1,23 @@
 package oncall.controller;
 
-import oncall.service.OnCallService;
+import oncall.service.OnCallSaveService;
 
 public class OnCallController {
-    private final OnCallService onCallService;
+    private final OnCallSaveService onCallSaveService;
 
-    public OnCallController(OnCallService onCallService) {
-        this.onCallService = onCallService;
+    public OnCallController(OnCallSaveService onCallSaveService) {
+        this.onCallSaveService = onCallSaveService;
     }
 
     public void saveAssignMonthAndStartDayOfTheWeek(String inputValue) {
-        onCallService.saveAssignMonthAndStartDayOfTheWeek(inputValue);
+        onCallSaveService.saveAssignMonthAndStartDayOfTheWeek(inputValue);
     }
 
     public void saveWeekdaysOnCallPlace(String inputValue) {
-        onCallService.saveWeekdaysOnCallPlace(inputValue);
+        onCallSaveService.saveWeekdaysOnCallPlace(inputValue);
+    }
+
+    public void saveWeekendsOnCallPlace(String inputValue) {
+        onCallSaveService.saveWeekendsOnCallPlace(inputValue);
     }
 }

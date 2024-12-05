@@ -21,7 +21,8 @@ public class OnCallSystem {
     private void saveAssignMonthAndStartDayOfTheWeek() {
         while(true) {
             try {
-                controller.saveAssignMonthAndStartDayOfTheWeek(inputView.inputAssignMonthAndStartDayOfTheWeek());
+                String inputValue = inputView.inputAssignMonthAndStartDayOfTheWeek();
+                controller.saveAssignMonthAndStartDayOfTheWeek(inputValue);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -32,7 +33,8 @@ public class OnCallSystem {
     private void saveWeekdaysOnCallPlace() {
         while(true) {
             try {
-                controller.saveWeekdaysOnCallPlace(inputView.inputWeekdaysOnCallPlace());
+                String inputValue = inputView.inputWeekdaysOnCallPlace();
+                controller.saveWeekdaysOnCallPlace(inputValue);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -43,7 +45,8 @@ public class OnCallSystem {
     private void saveWeekendsOnCallPlace() {
         while(true) {
             try {
-                inputView.inputWeekendsOnCallPlace();
+                String inputValue = inputView.inputWeekendsOnCallPlace();
+                controller.saveWeekendsOnCallPlace(inputValue);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
