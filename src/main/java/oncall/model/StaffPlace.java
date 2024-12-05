@@ -17,6 +17,26 @@ public class StaffPlace {
         validateSameCount(weekdaysPlace);
     }
 
+    public Staff getStaffByIndex(int index) {
+        return staffList.get(index);
+    }
+
+    public void changePlaceByFormerIndex(int formerIndex) {
+        Staff formerStaff = staffList.get(formerIndex);
+
+        // 마지막 index라면
+        if(formerIndex == staffList.size() - 1) {
+            Staff targetStaff = staffList.get(0);
+            staffList.set(formerIndex, targetStaff);
+            staffList.set(0, formerStaff);
+            return;
+        }
+
+        Staff targetStaff = staffList.get(formerIndex + 1);
+        staffList.set(formerIndex, targetStaff);
+        staffList.set(formerIndex + 1, formerStaff);
+    }
+
     public boolean containsStaff(Staff staff) {
         return staffList.contains(staff);
     }

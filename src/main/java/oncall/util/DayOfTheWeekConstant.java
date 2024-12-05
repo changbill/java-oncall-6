@@ -24,9 +24,19 @@ public enum DayOfTheWeekConstant {
 
     public static Optional<DayOfWeek> getDayOfWeekByKorean(String korean) {
         return Arrays.stream(values())
-                .filter(v -> v.inKorean.equals(korean))
+                .filter(value -> value.inKorean.equals(korean))
                 .map(DayOfTheWeekConstant::getDayOfWeek)
                 .findFirst();
+    }
+
+    public static String getKoreanByDayOfWeek(DayOfWeek dayOfWeek) {
+        return Arrays.stream(values())
+                .filter(value -> value.dayOfWeek == dayOfWeek)
+                .map(DayOfTheWeekConstant::getInKorean)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "DayOfTheWeekConstant의 getKoreanByDayOfWeek 메서드 오류"
+                ));
     }
 
     public DayOfWeek getDayOfWeek() {

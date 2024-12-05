@@ -3,19 +3,23 @@ package oncall;
 import oncall.controller.OnCallController;
 import oncall.controller.OnCallControllerFactory;
 import oncall.view.InputView;
+import oncall.view.OutputView;
 
 public class OnCallSystem {
     private final InputView inputView;
+    private final OutputView outputView;
     private final OnCallController controller;
 
     public OnCallSystem() {
         inputView = new InputView();
+        outputView = new OutputView();
         controller = OnCallControllerFactory.getController();
     }
     public void run() {
         saveAssignMonthAndStartDayOfTheWeek();
         saveWeekdaysOnCallPlace();
         saveWeekendsOnCallPlace();
+        outputView.printOnCallResponse(controller.getOnCallResponseDto());
     }
 
     private void saveAssignMonthAndStartDayOfTheWeek() {
