@@ -18,7 +18,7 @@ class OnCallValidatorTest {
 
     @ParameterizedTest
     @DisplayName("비상 근무를 배정할 월과 시작 요일의 입력 값이 올바르지 않은 경우")
-    @ValueSource(strings = {"asb", "123", "!?", "13,월", "0,월", "1,워","2,뫀"})
+    @ValueSource(strings = {"asb", "123", "!?", "13,월", "0,월", "1,워", "2,뫀"})
     void validateAssignMonthAndStartDayOfTheWeekExceptionTest(String value) {
         assertThatThrownBy(() -> onCallValidator.validateAssignMonthAndStartDayOfTheWeek(value))
                 .hasMessageContaining("[ERROR] 유효하지 않은 입력 값입니다. 다시 입력해 주세요.")
